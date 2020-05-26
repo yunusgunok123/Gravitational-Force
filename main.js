@@ -1,3 +1,15 @@
+const textNode = document.getElementById("text");
+
+const Awake = async () => {
+  const response = await fetch("https://yunuserver.herokuapp.com/", {
+    method: "POST",
+  });
+  const json = await response.json();
+  textNode.innerText = JSON.stringify(json, null, 2);
+};
+
+Awake();
+
 const width = 500;
 const height = 500;
 
